@@ -1,0 +1,32 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}

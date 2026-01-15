@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <h1 class="text-center mb-3">Customer List</h1>
+  <div *ngIf="loading" class="text-center">Loading customers...</div>
+
+  <table *ngIf="!loading" class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.id }}</td>
+        <td>{{ u.name }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.address?.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

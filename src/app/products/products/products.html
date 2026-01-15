@@ -1,0 +1,47 @@
+<div class="container my-4">
+  <h2 class="text-center mb-4">Our Products</h2>
+  
+  <!-- Temporary Debug 
+  <div style="background: yellow; padding: 10px; margin: 10px 0;">
+    DEBUG: Loading = {{ loading }}, Products = {{ products.length }}
+  </div>-->
+  
+  <!-- Loading State -->
+  <div *ngIf="loading" class="text-center p-5">
+    <p>Loading our amazing products...</p>
+  </div>
+
+  <!-- Products Grid -->
+  <div *ngIf="!loading && products.length > 0" class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+      <div class="card h-100 shadow-sm">
+        <img [src]="product.image" 
+             [alt]="product.title" 
+             class="card-img-top" 
+             style="height: 200px; object-fit: contain;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text text-muted small">{{ product.category | titlecase }}</p>
+          <p class="card-text flex-grow-1">{{ product.description | slice:0:80 }}...</p>
+          <div class="mt-auto">
+            <p class="h5 text-primary mb-3">${{ product.price }}</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-success" (click)="addToCart(product)">
+                Add to Cart
+              </button>
+              <button class="btn btn-outline-primary" [routerLink]="['/products', product.id]">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Products Found -->
+  <div *ngIf="!loading && products.length === 0" class="text-center p-5">
+    <h4>No products found</h4>
+    <p class="text-muted">Please try again later.</p>
+  </div>
+</div>

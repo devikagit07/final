@@ -1,59 +1,63 @@
-# Final
+# Angular E-Commerce Website - Jewelry Store
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+## Overview
+Professional Angular standalone e-commerce website featuring jewelry products from FakeStoreAPI.
 
-## Development server
+## Features
+- ✅ Home page with jewelry theme
+- ✅ Products page with card layout
+- ✅ Product detail view
+- ✅ Shopping cart functionality
+- ✅ About and Contact pages
+- ✅ Responsive navbar and footer
+- ✅ Customer management page
 
-To start a local development server, run:
+## API Configuration
+- **Products API**: https://fakestoreapi.com/products/category/jewelery
+- **Customers API**: https://jsonplaceholder.typicode.com/users
 
+## Product Model
+```typescript
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
+```
+
+## Running the Application
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`
 
-## Code scaffolding
+## Routes
+- `/` - Home page
+- `/products` - Products listing
+- `/products/:id` - Product detail
+- `/cart` - Shopping cart
+- `/customers` - Customer management
+- `/about` - About page
+- `/contact` - Contact page
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Key Components
+- **ProductsComponent**: Displays jewelry products in card layout
+- **ProductDetailComponent**: Shows detailed product information
+- **Cart**: Shopping cart with add/remove functionality
+- **NavbarComponent**: Navigation with cart counter
+- **FooterComponent**: Footer with links and info
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Notes
+- Products load from FakeStoreAPI jewelry category
+- Cart data persists in localStorage
+- All components are standalone (no NgModule)
+- Bootstrap 5 for styling

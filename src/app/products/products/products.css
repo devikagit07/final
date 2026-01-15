@@ -1,0 +1,20 @@
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-img-top {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn {
+  font-size: 0.9rem;
+}

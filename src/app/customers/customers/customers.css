@@ -1,0 +1,38 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.my-5 {
+  margin: 2rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-dark th {
+  background-color: #333;
+  color: white;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
